@@ -1,6 +1,6 @@
-import { ExternalLink } from '@tamagui/lucide-icons'
-import { Anchor, H2, Paragraph, XStack, YStack } from 'tamagui'
-import { ToastControl } from 'app/CurrentToast'
+import { ExternalLink } from "@tamagui/lucide-icons";
+import { Anchor, H2, Paragraph, Progress, XStack, YStack } from "tamagui";
+import { ToastControl } from "app/CurrentToast";
 
 export default function TabOneScreen() {
   return (
@@ -9,7 +9,33 @@ export default function TabOneScreen() {
 
       <ToastControl />
 
-      <XStack ai="center" jc="center" fw="wrap" gap="$1.5" pos="absolute" b="$8">
+      <Progress backgroundColor={"$gray1"} value={0}>
+        <Progress.Indicator
+          animation={undefined}
+          backgroundColor="$accentColor"
+        />
+      </Progress>
+      <Progress backgroundColor={"$gray1"} value={0}>
+        <Progress.Indicator animation={null} backgroundColor="$accentColor" />
+      </Progress>
+      <Progress backgroundColor={"$gray1"} value={0}>
+        <Progress.Indicator animation={"lazy"} backgroundColor="$accentColor" />
+      </Progress>
+      <Progress backgroundColor={"$gray1"} value={0}>
+        <Progress.Indicator
+          animation={"bouncy"}
+          backgroundColor="$accentColor"
+        />
+      </Progress>
+
+      <XStack
+        ai="center"
+        jc="center"
+        fw="wrap"
+        gap="$1.5"
+        pos="absolute"
+        b="$8"
+      >
         <Paragraph fos="$5">Add</Paragraph>
 
         <Paragraph fos="$5" px="$2" py="$1" col="$blue10" bg="$blue5" br="$3">
@@ -25,8 +51,8 @@ export default function TabOneScreen() {
           py="$1"
           br="$3"
           bg="$purple5"
-          hoverStyle={{ bg: '$purple6' }}
-          pressStyle={{ bg: '$purple4' }}
+          hoverStyle={{ bg: "$purple6" }}
+          pressStyle={{ bg: "$purple4" }}
         >
           <Anchor
             href="https://tamagui.dev/docs/core/configuration"
@@ -44,5 +70,5 @@ export default function TabOneScreen() {
         </Paragraph>
       </XStack>
     </YStack>
-  )
+  );
 }
